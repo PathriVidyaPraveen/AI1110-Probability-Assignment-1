@@ -46,6 +46,7 @@ def biased_decision_with_fair_coin(flip_coin , p):
     return decision
 
 
+
 if __name__ == "__main__":
     movies = 0 #Outcomes favourable to choosing movies
     games = 0  #Outcomes favourable to choosing video games
@@ -54,12 +55,34 @@ if __name__ == "__main__":
     # be 1/8 thereby ensuring the correctness of the code if we want our probability of choosing
     # movies to be 0.125
 
-    for no_of_experiments in range(10000):
-        decision = biased_decision_with_fair_coin(flip_coin , 0.125)
-        if decision == False :
-            movies += 1
-        else :
-            games += 1
-    print(movies / 10000)
+    #To improve the accuracy of probability result to be close to 0.125 , we perform this entire 
+    #experiment 10 times and take the mean of all 10 probabilities.
+    probabilities = []
+
+    for repeat_exp in range(10):
+        for no_of_experiments in range(10000):
+            decision = biased_decision_with_fair_coin(flip_coin , 0.125)
+            if decision == False :
+                movies += 1
+            else :
+                games += 1
+        probabilities.append(movies/10000)
+        movies = 0 # Reset the count of movies and video games outcomes for repeating experiment.
+        games = 0
+    # Make a numpy array out of the probabilities list and calculate mean
+    prob_array = np.array(probabilities)
+    mean_probability = np.mean(prob_array)
+
+    print(mean_probability)
+        
+
+
+
+# We retain this experiment of taking biased decision 10000 times for plotting the probability mass
+#  function. Now we have to do another experiment of tossing a fair coin 10000 times to plot its
+# probability measure using matplotlib. Then we have to plot the Probability Mass Function (PMF) of 
+# a) Outcomes of flip_coin() function (plot should show that fair coin produces almost equal 
+# probabilities). b) Outcomes of the biased_decision_with_fair_coin() function (unequal probabilities)
+
 
 
