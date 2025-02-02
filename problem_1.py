@@ -17,7 +17,7 @@ def flip_coin():
 # biased decision with head probability being p.
 
 def biased_decision_with_fair_coin(flip_coin , p):
-    no_of_tosses = (np.log10(p))//(np.log10(0.5))
+    no_of_tosses = int((np.log10(p))/(np.log10(0.5)))
 
 
     # Here we make this assumption that the given argument p must be of the form (0.5)^x where x is
@@ -44,5 +44,22 @@ def biased_decision_with_fair_coin(flip_coin , p):
     
 
     return decision
+
+
+if __name__ == "__main__":
+    movies = 0 #Outcomes favourable to choosing movies
+    games = 0  #Outcomes favourable to choosing video games
+
+    #Conduct the experiment to take biased decision 10000 times and test for the movies probability to 
+    # be 1/8 thereby ensuring the correctness of the code if we want our probability of choosing
+    # movies to be 0.125
+
+    for no_of_experiments in range(10000):
+        decision = biased_decision_with_fair_coin(flip_coin , 0.125)
+        if decision == False :
+            movies += 1
+        else :
+            games += 1
+    print(movies / 10000)
 
 
