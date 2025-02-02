@@ -27,7 +27,7 @@ def biased_decision_with_fair_coin(flip_coin , p):
 
     outcomes = []
     #Toss the coin x number of times and store all of the outcomes in a list called outcomes
-    for i in range(x):
+    for i in range(no_of_tosses):
         result = flip_coin()
         outcomes.append(result)
     # Even if one tail(False) is present in the outcomes list , make the decision value to True as we select 
