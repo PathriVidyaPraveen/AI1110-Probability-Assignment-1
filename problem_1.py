@@ -77,9 +77,7 @@ if __name__ == "__main__":
         
 
 
-
-# We retain this experiment of taking biased decision 10000 times for plotting the probability mass
-#  function. Now we have to do another experiment of tossing a fair coin 10000 times to plot its
+# We do the same above experiment again in order to plot its PMF. Now we have to do another experiment of tossing a fair coin 10000 times to plot its
 # probability measure using matplotlib. Then we have to plot the Probability Mass Function (PMF) of 
 # a) Outcomes of flip_coin() function (plot should show that fair coin produces almost equal 
 # probabilities). b) Outcomes of the biased_decision_with_fair_coin() function (unequal probabilities)
