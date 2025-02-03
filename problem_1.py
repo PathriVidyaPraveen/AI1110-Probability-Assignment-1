@@ -74,6 +74,8 @@ if __name__ == "__main__":
     mean_probability = np.mean(prob_array)
 
     print(mean_probability)
+    
+    
         
 
 
@@ -81,6 +83,8 @@ if __name__ == "__main__":
 # probability measure using matplotlib. Then we have to plot the Probability Mass Function (PMF) of 
 # a) Outcomes of flip_coin() function (plot should show that fair coin produces almost equal 
 # probabilities). b) Outcomes of the biased_decision_with_fair_coin() function (unequal probabilities)
+
+  
 
 
 
