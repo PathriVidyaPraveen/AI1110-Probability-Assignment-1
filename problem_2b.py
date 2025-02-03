@@ -20,4 +20,4 @@ dataset = pd.DataFrame(data_set_read_from_csv)
 
 masked_dataset = dataset[(dataset["Weight"] > 170) & (dataset["Index"] < 4)]
 no_of_people_with_given_conditions = len(masked_dataset)
-print(no_of_people_with_given_conditions)
+print("The number of people who have weight greater than 170 and index is lesser than 4 is {}".format(no_of_people_with_given_conditions))
