@@ -13,12 +13,12 @@ Titanic_data = pd.read_csv("Titanic-Dataset.csv") #reads the csv file
 # calculating P(S)
 
 no_of_elements_in_S = len(Titanic_data[(Titanic_data["Survived"]== 1)])
-# above expression counts the number of 1's in column "Survived" of the data-set Titanic_data
+# above expression counts the number of 1's in column "Survived" of the data-set Titanic_data(1 means the person survived)
 
 Total_no_of_people = len(Titanic_data)
 # gives the the total number of people 
 # now P(S) = no_of_elements_in_S / Total_no_of_people
-probability_of_S = float(no_of_elements_in_S/Total_no_of_people) 
+probability_of_S = no_of_elements_in_S/Total_no_of_people
 
 # from this we got P(S)
 
@@ -29,7 +29,7 @@ no_of_elements_in_Q = len(Titanic_data[(Titanic_data["Survived"]==1) & (Titanic_
 # above expression counts the number of rows having 1 in "Survived" column and 2 in "Ticket class" column 
 # which is the number of elements in Q . 
 # now P(C ∩ S) = P(Q) = no_of_element_in_Q / Total_no_of_people
-probability_of_Q = float(no_of_elements_in_Q/Total_no_of_people)
+probability_of_Q = no_of_elements_in_Q/Total_no_of_people
 
 # we found both P(S) and P(C ∩ S) above
 # substituting these values to get P(C|S) = P(C ∩ S)/P(S) = P(Q)/p(S)
