@@ -12,6 +12,9 @@ Titanic_data = pd.read_csv("Titanic-Dataset.csv") #reads the csv file
 
 # calculating P(S)
 
+#Use principle of boolean masking to find the passengers of dataset satisfying the given criteria.
+# Given that the person survived, what is the probability that his ticket Class is two?
+
 no_of_elements_in_S = len(Titanic_data[(Titanic_data["Survived"]== 1)])
 # above expression counts the number of 1's in column "Survived" of the data-set Titanic_data(1 means the person survived)
 
