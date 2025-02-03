@@ -1,4 +1,3 @@
-
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -46,7 +45,6 @@ def biased_decision_with_fair_coin(flip_coin , p):
     return decision
 
 
-
 if __name__ == "__main__":
     movies = 0 #Outcomes favourable to choosing movies
     games = 0  #Outcomes favourable to choosing video games
@@ -74,22 +72,20 @@ if __name__ == "__main__":
     mean_probability = np.mean(prob_array)
 
     print(mean_probability)
-    
-    
         
+
 
 
 # We do the same above experiment again in order to plot its PMF. Now we have to do another experiment of tossing a fair coin 10000 times to plot its
 # probability measure using matplotlib. Then we have to plot the Probability Mass Function (PMF) of 
 # a) Outcomes of flip_coin() function (plot should show that fair coin produces almost equal 
 # probabilities). b) Outcomes of the biased_decision_with_fair_coin() function (unequal probabilities)
-
-  
-    fig , (plot1 , plot2) = plt.subplots(1,2,figsize=(6,5))
+    
+    fig , (plot1 , plot2) = plt.subplots(1,2,figsize=(12,10))
 
     # Plot a )
 
-    x = np.array(["Heads","Tails"]) # True for heads and false for tails
+    x1 = np.array(["Heads","Tails"]) # True for heads and false for tails
     no_heads_of_fair_coin , no_tails_of_fair_coin = 0,0
     for repeat_exp in range(10000):
         outcome = flip_coin()
@@ -98,18 +94,41 @@ if __name__ == "__main__":
         else :
             no_tails_of_fair_coin += 1
     # Count the frequencies of outcomes for 10000 trails
-    y = np.array([no_heads_of_fair_coin,no_tails_of_fair_coin]) 
-    y = y/10000 # To find probabilities of heads and tails respectively by normalization
+    y1 = np.array([no_heads_of_fair_coin,no_tails_of_fair_coin]) 
+    y1 = y1/10000 # To find probabilities of heads and tails respectively by normalization
 
-    plot1.set_title('Outcomes of tossing a fair coin',color='blue')
-    plot1.set_xlabel('Possible outcomes of fair coin')
-    plot1.set_ylabel('Probability Mass Function(PMF)')
-    plot1.bar(x , y)
+    plot1.set_title('Outcomes of tossing a fair coin',color='blue',fontsize=18)
+    plot1.set_xlabel('Possible outcomes of fair coin',color='red',fontsize=14)
+    plot1.set_ylabel('Probability Mass Function(PMF) of fair coin',color='purple',fontsize=14)
+    plot1.bar(x1 , y1 , color=['blue','green'])
 
 
+    # Plot b)
+    x2 = np.array(["Movies" , "Video Games"]) #movies should be of probability p = 0.125 (as per given
+    # in question). We can generalize this to any value of p by counting appropriate number of tosses
+    # required
+    movie , videoGames = 0,0
+    for repeat_exp in range(10000):
+        decision = biased_decision_with_fair_coin(flip_coin,0.125)
+        if decision == False:
+            movie += 1
+        else :
+            videoGames += 1
+    # Count the frequencies of favorable outcomes to both movies , video games
+    y2 = np.array([movie,videoGames])
+    # Normalize these frequencies to find corresponding probabilities
+    y2 = y2/10000
+
+    plot2.set_title('Outcomes of biased decision with fair coin',color = 'green',fontsize=18)
+    plot2.set_xlabel('Possible biased decisions',color='orange',fontsize=14)
+    plot2.set_ylabel('Probability Mass Function (PMF) of biased decisions',color='magenta',fontsize=14)
+    plot2.bar(x2,y2,color=['orange','magenta'])
+            
+
+    
     plt.tight_layout()
     plt.show()
-    
+
 
 
 
