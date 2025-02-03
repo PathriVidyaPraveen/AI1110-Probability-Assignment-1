@@ -129,6 +129,8 @@ if __name__ == "__main__":
     plt.tight_layout()
     plt.show()
 
+     #This code plots for the probability of choosing movies to be 1/8. However , we can extend  this
+    # code to any probability by changing the argument p to the biased_decision_with_fair_coin() function
 
 
 
