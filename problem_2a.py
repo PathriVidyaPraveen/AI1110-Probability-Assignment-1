@@ -15,7 +15,7 @@ Titanic_data = pd.read_csv("Titanic-Dataset.csv") #reads the csv file
 no_of_elements_in_S = (Titanic_data["Survived"]==1).sum()
 # above expression counts the number of 1's in column "Survived" of the data-set Titanic_data
 
-Total_no_of_people = len(Titanic_data["Survived"])
+Total_no_of_people = len(Titanic_data)
 # gives the the total number of people 
 # now P(S) = no_of_elements_in_S / Total_no_of_people
 probability_of_S = float(no_of_elements_in_S/Total_no_of_people) 
