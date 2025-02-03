@@ -85,6 +85,31 @@ if __name__ == "__main__":
 # probabilities). b) Outcomes of the biased_decision_with_fair_coin() function (unequal probabilities)
 
   
+    fig , (plot1 , plot2) = plt.subplots(1,2,figsize=(6,5))
+
+    # Plot a )
+
+    x = np.array(["Heads","Tails"]) # True for heads and false for tails
+    no_heads_of_fair_coin , no_tails_of_fair_coin = 0,0
+    for repeat_exp in range(10000):
+        outcome = flip_coin()
+        if outcome == True :
+            no_heads_of_fair_coin += 1
+        else :
+            no_tails_of_fair_coin += 1
+    # Count the frequencies of outcomes for 10000 trails
+    y = np.array([no_heads_of_fair_coin,no_tails_of_fair_coin]) 
+    y = y/10000 # To find probabilities of heads and tails respectively by normalization
+
+    plot1.set_title('Outcomes of tossing a fair coin',color='blue')
+    plot1.set_xlabel('Possible outcomes of fair coin')
+    plot1.set_ylabel('Probability Mass Function(PMF)')
+    plot1.bar(x , y)
+
+
+    plt.tight_layout()
+    plt.show()
+    
 
 
 
