@@ -139,8 +139,7 @@ if __name__ == "__main__":
 
     # Plot for biased decision of given value p = 0.125
     x2 = np.array(["Movies" , "Video Games"]) #movies should be of probability p = 0.125 (as per given
-    # in question). We can generalize this to any value of p by counting appropriate number of tosses
-    # required
+    # in question). 
     movie , videoGames = 0,0
     for repeat_exp in range(10000):
         decision = biased_decision_with_fair_coin(flip_coin,0.125)
@@ -164,9 +163,7 @@ if __name__ == "__main__":
 
 
     # Plot b)
-    x2 = np.array(["Movies" , "Video Games"]) #movies should be of probability p = 0.125 (as per given
-    # in question). We can generalize this to any value of p by counting appropriate number of tosses
-    # required
+    x3 = np.array(["Movies" , "Video Games"])
     movie , videoGames = 0,0
     for repeat_exp in range(10000):
         decision = biased_decision_with_fair_coin(flip_coin,prob_movies)
@@ -175,14 +172,14 @@ if __name__ == "__main__":
         else :
             videoGames += 1
     # Count the frequencies of favorable outcomes to both movies , video games
-    y2 = np.array([movie,videoGames])
+    y3 = np.array([movie,videoGames])
     # Normalize these frequencies to find corresponding probabilities
-    y2 = y2/10000
+    y3 = y3/10000
 
     plot3.set_title('Outcomes of biased decision with fair coin',color = 'green',fontsize=18)
     plot3.set_xlabel('Possible biased decisions',color='green',fontsize=14)
     plot3.set_ylabel('Probability Mass Function (PMF) of biased decisions',color='indigo',fontsize=14)
-    plot3.bar(x2,y2,color=['red','indigo'])
+    plot3.bar(x3,y3,color=['red','indigo'])
 
 
 
@@ -192,8 +189,7 @@ if __name__ == "__main__":
     plt.tight_layout()
     plt.show()
 
-    #This code plots for the probability of choosing movies to be 1/8. However , we can extend  this
-    # code to any probability by changing the argument p to the biased_decision_with_fair_coin() function
+    
 
 
 
