@@ -80,7 +80,7 @@ def biased_decision_with_fair_coin(flip_coin , p):
 
     
     
-if _name_ == "_main_":
+if __name__ == "__main__":
     movies = 0 #Outcomes favourable to choosing movies
     games = 0  #Outcomes favourable to choosing video games
     prob_movies = float(input("Please enter the probability of choosing movies: "))
@@ -198,7 +198,7 @@ if _name_ == "_main_":
     
     plt.tight_layout()
     plt.show()
-    
+
 
 
 
