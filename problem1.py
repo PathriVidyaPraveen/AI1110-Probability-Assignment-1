@@ -132,7 +132,7 @@ if __name__ == "__main__":
     # Count the frequencies of outcomes for 10000 trails
     y1 = np.array([no_heads_of_fair_coin,no_tails_of_fair_coin]) 
     y1 = y1/10000 # To find probabilities of heads and tails respectively by normalization
-
+    # plot.text function is used to add the values of probabilities onto the bar graph.
     plot1.text(0, y1[0]+0.005,f"{y1[0]:.2f}",ha="center",fontsize=8)
     plot1.text(1, y1[1]+0.005,f"{y1[1]:.2f}",ha="center",fontsize=8)
 
