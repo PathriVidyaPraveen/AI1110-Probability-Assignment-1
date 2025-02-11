@@ -1,3 +1,4 @@
+# Problem-1
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -79,7 +80,7 @@ def biased_decision_with_fair_coin(flip_coin , p):
 
     
     
-if __name__ == "__main__":
+if _name_ == "_main_":
     movies = 0 #Outcomes favourable to choosing movies
     games = 0  #Outcomes favourable to choosing video games
     prob_movies = float(input("Please enter the probability of choosing movies: "))
@@ -132,7 +133,10 @@ if __name__ == "__main__":
     y1 = np.array([no_heads_of_fair_coin,no_tails_of_fair_coin]) 
     y1 = y1/10000 # To find probabilities of heads and tails respectively by normalization
 
-    plot1.set_title('Outcomes of tossing a fair coin',color='blue',fontsize=18)
+    plot1.text(0, y1[0]+0.005,f"{y1[0]:.2f}",ha="center",fontsize=8)
+    plot1.text(1, y1[1]+0.005,f"{y1[1]:.2f}",ha="center",fontsize=8)
+
+    plot1.set_title('Outcomes of tossing a fair coin',color='blue',fontsize=10)
     plot1.set_xlabel('Possible outcomes of fair coin',color='red',fontsize=14)
     plot1.set_ylabel('Probability Mass Function(PMF) of fair coin',color='purple',fontsize=14)
     plot1.bar(x1 , y1 , color=['blue','green'])
@@ -152,7 +156,10 @@ if __name__ == "__main__":
     # Normalize these frequencies to find corresponding probabilities
     y2 = y2/10000
 
-    plot2.set_title('Outcomes of biased decision with fair coin(p=0.125)',color = 'red',fontsize=18)
+    plot2.text(0, y2[0]+0.005,f"{y2[0]:.2f}",ha="center",fontsize=8)
+    plot2.text(1, y2[1]+0.005,f"{y2[1]:.2f}",ha="center",fontsize=8)
+
+    plot2.set_title('Outcomes of biased decision with fair coin(p=0.125)',color = 'red',fontsize=10)
     plot2.set_xlabel('Possible biased decisions',color='orange',fontsize=14)
     plot2.set_ylabel('Probability Mass Function (PMF) of biased decisions',color='magenta',fontsize=14)
     plot2.bar(x2,y2,color=['orange','magenta'])
@@ -176,7 +183,10 @@ if __name__ == "__main__":
     # Normalize these frequencies to find corresponding probabilities
     y3 = y3/10000
 
-    plot3.set_title('Outcomes of biased decision with fair coin',color = 'green',fontsize=18)
+    plot3.text(0, y3[0]+0.005,f"{y3[0]:.2f}",ha="center",fontsize=8)
+    plot3.text(1, y3[1]+0.005,f"{y3[1]:.2f}",ha="center",fontsize=8)
+
+    plot3.set_title('Outcomes of biased decision with fair coin',color = 'green',fontsize=10)
     plot3.set_xlabel('Possible biased decisions',color='green',fontsize=14)
     plot3.set_ylabel('Probability Mass Function (PMF) of biased decisions',color='indigo',fontsize=14)
     plot3.bar(x3,y3,color=['red','indigo'])
@@ -188,7 +198,6 @@ if __name__ == "__main__":
     
     plt.tight_layout()
     plt.show()
-
     
 
 
